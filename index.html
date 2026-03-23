@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardik Pant | Future-Ready Developer</title>
+    <meta name="description" content="Portfolio of Hardik Pant - AI & ML Enthusiast and Computer Science Student at LPU.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Next-Gen Cinematic Cyberpunk Background Layers -->
+    <div id="cyber-bg" class="cyber-bg-container">
+        <!-- Base canvas for dynamic node connections -->
+        <canvas id="bg-canvas" class="cyber-layer" data-speed="0.01"></canvas>
+        <!-- Deep grid overlay -->
+        <div class="cyber-layer layer-grid" data-speed="-0.025"></div>
+        <!-- Deep hex data overlay -->
+        <div class="cyber-layer layer-hex" data-speed="0.015"></div>
+        <!-- Moving abstract particles -->
+        <div class="cyber-layer layer-particles" data-speed="0.035"></div>
+        <!-- Ambient radial glow -->
+        <div class="cyber-layer layer-glow" data-speed="-0.01"></div>
+    </div>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">HP.</a>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <!-- Starfield canvas (hero-local) -->
+        <canvas id="hero-starfield"></canvas>
+        <!-- CRT Scanlines overlay -->
+        <div class="crt-scanlines"></div>
+        <!-- CRT flicker layer -->
+        <div class="crt-flicker"></div>
+
+        <!-- Hero frame border (assembled via clip-path on enter) -->
+        <div class="hero-frame" id="heroFrame">
+            <!-- HUD corner elements (mouse-tracked) -->
+            <div class="hud-corner top-left" id="hudTL">
+                <div class="hud-bracket"></div>
+                <div class="hud-readout" id="readoutTL"></div>
+            </div>
+            <div class="hud-corner top-right" id="hudTR">
+                <div class="hud-bracket"></div>
+                <div class="hud-readout hex-scroll" id="readoutTR"></div>
+            </div>
+            <div class="hud-corner bottom-left" id="hudBL">
+                <div class="hud-bracket"></div>
+                <div class="hud-cpu" id="cpuBars"></div>
+            </div>
+            <div class="hud-corner bottom-right" id="hudBR">
+                <div class="hud-bracket"></div>
+                <div class="hud-readout" id="readoutBR"></div>
+            </div>
+        </div>
+
+        <div class="container hero-content">
+            <span class="hero-tagline"><span class="tagline-text" id="taglineText"></span></span>
+            <h1 class="hero-name" data-text="Hardik Pant">Hardik Pant</h1>
+            <div class="hero-title" id="heroTitle"></div>
+            <p class="hero-intro">
+                I am Hardik Pant, a Computer Science student passionate about building impactful digital solutions through software development, machine learning, and modern web technologies.
+            </p>
+            <div class="hero-btns">
+                <a href="javascript:void(0)" onclick="openSection('projects')" class="neon-btn neon-btn-primary pulse-neon">View Projects <i class="fas fa-arrow-right"></i></a>
+                <a href="https://drive.google.com/drive/folders/19o5zCLReTcclGKFJUlODKlONa4O1gUeR" target="_blank" class="neon-btn neon-btn-secondary pulse-neon-purple">Download Resume <i class="fas fa-download"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         AI AVATAR ASSISTANT SECTION
+    ═══════════════════════════════════════════════════════ -->
+    <section id="ai-avatar" class="avatar-section">
+        <div class="av-bg-grid"></div>
+        <canvas id="av-particles" class="av-particles"></canvas>
+
+        <div class="container">
+            <div class="av-section-tag" id="avSectionTag">// NEURAL_INTERFACE_v3.7 // IDENTITY_MODULE: ACTIVE //</div>
+
+            <div class="av-layout">
+
+                <!-- ── LEFT PANEL: HUD Info ── -->
+                <div class="av-left-panel reveal">
+                    <div class="avl-id-block">
+                        <div class="avl-label">UNIT_ID</div>
+                        <div class="avl-value">HP-2024-CSE</div>
+                    </div>
+                    <div class="avl-id-block">
+                        <div class="avl-label">IDENTITY</div>
+                        <div class="avl-value av-name-glow">Hardik Pant</div>
+                    </div>
+                    <div class="avl-id-block">
+                        <div class="avl-label">ROLE</div>
+                        <div class="avl-value" style="font-size:0.65rem; color:#bc13fe; letter-spacing:1px;">Future-Ready Developer<br>AI &amp; ML Enthusiast</div>
+                    </div>
+                    <div class="avl-status">
+                        <span class="avl-dot"></span>
+                        <span>AI Assistant Active</span>
+                    </div>
+
+                    <div class="avl-hud-msgs">
+                        <div class="avl-msg" id="avMsg1">&#x25B6; Neural Interface Connected</div>
+                        <div class="avl-msg" id="avMsg2">&#x25B6; Identity Verified</div>
+                        <div class="avl-msg" id="avMsg3">&#x25B6; Initializing Profile...</div>
+                    </div>
+
+                    <!-- Signal bars -->
+                    <div class="avl-signal-wrap">
+                        <span class="avl-sig-label">SIGNAL</span>
+                        <div class="avl-signal">
+                            <div class="avl-sig-bar" style="height:6px"></div>
+                            <div class="avl-sig-bar" style="height:10px"></div>
+                            <div class="avl-sig-bar" style="height:15px"></div>
+                            <div class="avl-sig-bar" style="height:10px"></div>
+                            <div class="avl-sig-bar" style="height:6px"></div>
+                        </div>
+                    </div>
+
+                    <!-- Spinning HUD rings -->
+                    <div class="avl-rings">
+                        <div class="avl-ring avl-r1"></div>
+                        <div class="avl-ring avl-r2"></div>
+                        <div class="avl-ring avl-r3"></div>
+                        <div class="avl-ring-center-dot"></div>
+                    </div>
+
+                    <!-- Mini stat bars -->
+                    <div class="avl-stats">
+                        <div class="avl-stat-row"><span>AI</span><div class="avl-stat-bar"><div class="avl-stat-fill" style="width:92%"></div></div><span>92%</span></div>
+                        <div class="avl-stat-row"><span>ML</span><div class="avl-stat-bar"><div class="avl-stat-fill magenta" style="width:85%"></div></div><span>85%</span></div>
+                        <div class="avl-stat-row"><span>WEB</span><div class="avl-stat-bar"><div class="avl-stat-fill" style="width:78%"></div></div><span>78%</span></div>
+                    </div>
+                </div>
+
+                <!-- ── CENTER: Avatar Stage ── -->
+                <div class="av-stage-wrap">
+                    <!-- Orbital rings behind avatar -->
+                    <div class="av-ring-outer"></div>
+                    <div class="av-ring-mid"></div>
+                    <div class="av-ring-inner"></div>
+
+                    <!-- Holographic avatar container -->
+                    <div class="av-holo-wrap" id="avHoloWrap">
+                        <!-- CRT scanline moving over avatar -->
+                        <div class="av-holo-scan"></div>
+                        <!-- Glitch/distortion overlay -->
+                        <div class="av-holo-distort" id="avDistort"></div>
+
+                        <!-- SVG Avatar (Refined & Smarter) -->
+                        <svg id="avatarSVG" class="av-svg" viewBox="0 0 320 430" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <filter id="avGlowBlue" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="3.5" result="blur"/>
+                                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                                <filter id="avGlowPurple" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="5" result="blur"/>
+                                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                                <filter id="avGlowSoft">
+                                    <feGaussianBlur stdDeviation="2" result="blur"/>
+                                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                                <radialGradient id="avFaceGrad" cx="50%" cy="40%" r="60%">
+                                    <stop offset="0%" stop-color="#05101a"/>
+                                    <stop offset="100%" stop-color="#010408"/>
+                                </radialGradient>
+                                <radialGradient id="avSuitGrad" cx="50%" cy="30%" r="70%">
+                                    <stop offset="0%" stop-color="#0a192f"/>
+                                    <stop offset="100%" stop-color="#020813"/>
+                                </radialGradient>
+                            </defs>
+
+                            <!-- ═══ GLOW PLATFORM BASE ═══ -->
+                            <ellipse cx="160" cy="418" rx="115" ry="10" fill="rgba(0,243,255,0.08)" filter="url(#avGlowBlue)"/>
+                            <ellipse cx="160" cy="418" rx="80"  ry="6"  fill="rgba(0,243,255,0.15)"/>
+
+                            <!-- ═══ BODY / TECH SUIT ═══ -->
+                            <!-- Base chest piece glowing underlying mesh -->
+                            <path d="M 100 250 L 160 280 L 220 250 L 250 415 L 70 415 Z" fill="url(#avSuitGrad)" stroke="#00f3ff" stroke-width="0.8"/>
+                            
+                            <!-- Massive Elite Pauldrons (Shoulders) -->
+                            <path d="M 100 255 L 70 240 C 50 240, 30 290, 45 400 L 75 415 L 100 320 Z" fill="#010408" stroke="#00f3ff" stroke-width="1.5"/>
+                            <path d="M 220 255 L 250 240 C 270 240, 290 290, 275 400 L 245 415 L 220 320 Z" fill="#010408" stroke="#00f3ff" stroke-width="1.5"/>
+                            <!-- Pauldron accents (magenta lines) -->
+                            <path d="M 70 245 C 55 250, 45 300, 55 380" fill="none" stroke="#bc13fe" stroke-width="2" filter="url(#avGlowPurple)"/>
+                            <path d="M 250 245 C 265 250, 275 300, 265 380" fill="none" stroke="#bc13fe" stroke-width="2" filter="url(#avGlowPurple)"/>
+
+                            <!-- Layered Armor Plates: Chest -->
+                            <path d="M 130 260 L 160 295 L 190 260 L 220 320 L 160 415 L 100 320 Z" fill="rgba(2,10,24,0.9)" stroke="#00f3ff" stroke-width="1.5" filter="url(#avGlowSoft)"/>
+                            <!-- Arc node in center -->
+                            <polygon points="150,330 170,330 160,350" fill="rgba(188,19,254,0.3)" stroke="#bc13fe" stroke-width="1.5" filter="url(#avGlowPurple)"/>
+                            <circle cx="160" cy="336" r="4" fill="#ffffff" filter="url(#avGlowSoft)"/>
+                            <!-- Diagonal glowing seams -->
+                            <line x1="130" y1="260" x2="100" y2="320" stroke="rgba(0,243,255,0.6)" stroke-width="1.5"/>
+                            <line x1="190" y1="260" x2="220" y2="320" stroke="rgba(0,243,255,0.6)" stroke-width="1.5"/>
+                            <line x1="160" y1="350" x2="160" y2="415" stroke="rgba(188,19,254,0.7)" stroke-width="1" filter="url(#avGlowPurple)"/>
+                            <!-- Power vents -->
+                            <path d="M 115 340 L 140 330" fill="none" stroke="#00f3ff" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M 110 360 L 145 345" fill="none" stroke="#00f3ff" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M 205 340 L 180 330" fill="none" stroke="#00f3ff" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M 210 360 L 175 345" fill="none" stroke="#00f3ff" stroke-width="1.5" stroke-linecap="round"/>
+
+                            <!-- Collar extension -->
+                            <path d="M 125 255 L 110 200 L 135 210 Z" fill="rgba(2,10,24,0.8)" stroke="#00f3ff" stroke-width="1"/>
+                            <path d="M 195 255 L 210 200 L 185 210 Z" fill="rgba(2,10,24,0.8)" stroke="#00f3ff" stroke-width="1"/>
+
+                            <!-- ═══ NECK (High-tech synthetic fibers) ═══ -->
+                            <path d="M 135 210 L 140 260 L 180 260 L 185 210 Z" fill="#01050a" stroke="#00f3ff" stroke-width="1"/>
+                            <path d="M 142 225 Q 160 230 178 225" fill="none" stroke="rgba(0,243,255,0.4)" stroke-width="1"/>
+                            <path d="M 140 240 Q 160 245 180 240" fill="none" stroke="rgba(0,243,255,0.4)" stroke-width="1"/>
+                            <path d="M 141 255 Q 160 260 179 255" fill="none" stroke="rgba(0,243,255,0.4)" stroke-width="1"/>
+                            <rect x="156" y="215" width="8" height="40" fill="rgba(0,243,255,0.1)"/>
+                            <line x1="156" y1="215" x2="156" y2="255" stroke="#bc13fe" stroke-width="1.5" filter="url(#avGlowPurple)"/>
+                            <line x1="164" y1="215" x2="164" y2="255" stroke="#bc13fe" stroke-width="1.5" filter="url(#avGlowPurple)"/>
+
+                            <!-- ═══ HEAD (Sleek Cybernetic Human) ═══ -->
+                            <!-- Base Head Shape -->
+                            <path d="M 160 40 C 205 40, 220 70, 215 120 L 205 170 L 185 210 C 175 225, 145 225, 135 210 L 115 170 L 105 120 C 100 70, 115 40, 160 40 Z" fill="url(#avFaceGrad)" stroke="rgba(0,243,255,0.4)" stroke-width="1.5"/>
+
+                            <!-- Sharp Jawline Shading -->
+                            <path d="M 115 170 L 135 210 C 145 225, 175 225, 185 210 L 205 170" fill="none" stroke="#00f3ff" stroke-width="1" filter="url(#avGlowBlue)"/>
+
+                            <!-- CHEEKBONES -->
+                            <path d="M 115 165 Q 130 175 140 168" fill="none" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+                            <path d="M 205 165 Q 190 175 180 168" fill="none" stroke="rgba(0,243,255,0.2)" stroke-width="1"/>
+
+                            <!-- NOSE -->
+                            <path d="M 160 135 L 155 175 Q 160 182 165 175 Z" fill="rgba(0,15,30,0.6)" stroke="rgba(0,243,255,0.3)" stroke-width="1"/>
+                            <path d="M 152 178 C 155 183, 165 183, 168 178" fill="none" stroke="#00f3ff" stroke-width="1.2" opacity="0.8"/>
+
+                            <!-- MOUTH -->
+                            <g id="avMouthGroup">
+                                <path d="M 144 195 C 150 192, 170 192, 176 195" fill="none" stroke="rgba(0,243,255,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+                                <ellipse id="avMouthOpen" cx="160" cy="196" rx="14" ry="0" fill="rgba(0,243,255,0.2)"/>
+                                <path d="M 148 198 C 155 203, 165 203, 172 198" fill="none" stroke="#00f3ff" stroke-width="1.8" opacity="0.9" stroke-linecap="round"/>
+                            </g>
+                            <!-- Chin Cleft -->
+                            <path d="M 155 212 Q 160 215 165 212" fill="none" stroke="rgba(0,243,255,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+
+                            <!-- ═══ SLEEK CYBER HELMET / COWL ═══ -->
+                            <path d="M 160 35 C 210 35, 225 65, 220 115 L 205 125 C 185 140, 135 140, 115 125 L 100 115 C 95 65, 110 35, 160 35 Z" fill="rgba(2,10,24,0.95)" stroke="#00f3ff" stroke-width="1.5" filter="url(#avGlowSoft)"/>
+
+                            <!-- Geometric plates on the cowl -->
+                            <polygon points="150,55 170,55 165,85 155,85" fill="rgba(188,19,254,0.15)" stroke="#bc13fe" stroke-width="1"/>
+                            <path d="M 160 65 L 160 85" stroke="#bc13fe" stroke-width="1.5" filter="url(#avGlowPurple)"/>
+
+                            <!-- Visor Edge (V-shape over the brows) -->
+                            <path d="M 105 120 Q 130 145 160 135 Q 190 145 215 120" fill="none" stroke="#00f3ff" stroke-width="2.5" filter="url(#avGlowBlue)"/>
+
+                            <!-- Earpieces/Sensors -->
+                            <path d="M 95 110 L 105 100 L 110 135 L 100 145 Z" fill="#010610" stroke="#00f3ff" stroke-width="1.5"/>
+                            <path d="M 225 110 L 215 100 L 210 135 L 220 145 Z" fill="#010610" stroke="#00f3ff" stroke-width="1.5"/>
+                            <line x1="102" y1="122" x2="102" y2="135" stroke="#bc13fe" stroke-width="1.5" filter="url(#avGlowPurple)"/>
+                            <line x1="218" y1="122" x2="218" y2="135" stroke="#bc13fe" stroke-width="1.5" filter="url(#avGlowPurple)"/>
+
+                            <!-- EYES -->
+                            <path d="M 125 140 L 140 140 L 145 148 L 128 148 Z" fill="none" stroke="rgba(0,243,255,0.2)"/>
+                            <path d="M 195 140 L 180 140 L 175 148 L 192 148 Z" fill="none" stroke="rgba(0,243,255,0.2)"/>
+
+                            <!-- LEFT EYE -->
+                            <g id="avEyeL">
+                                <path d="M 120 145 L 132 142 L 145 146 L 132 150 Z" fill="#010610" stroke="#00f3ff" stroke-width="0.7"/>
+                                <circle cx="132" cy="146" r="3.5" fill="#005070" filter="url(#avGlowSoft)"/>
+                                <circle cx="132" cy="146" r="1.5" fill="#00f3ff" filter="url(#avGlowBlue)"/>
+                                <circle cx="133" cy="145" r="0.6" fill="#ffffff"/>
+                                <!-- Blink Lid -->
+                                <rect id="avLidL" x="115" y="135" width="35" height="15" fill="url(#avFaceGrad)"
+                                      style="transform: scaleY(0); transform-origin: 132px 135px; transition: transform 0.08s ease-in-out;"/>
+                                <!-- Epic Eyeliner -->
+                                <path d="M 118 145 Q 132 140 147 146" fill="none" stroke="#00f3ff" stroke-width="2" stroke-linecap="round"/>
+                            </g>
+
+                            <!-- RIGHT EYE -->
+                            <g id="avEyeR">
+                                <path d="M 200 145 L 188 142 L 175 146 L 188 150 Z" fill="#010610" stroke="#00f3ff" stroke-width="0.7"/>
+                                <circle cx="188" cy="146" r="3.5" fill="#005070" filter="url(#avGlowSoft)"/>
+                                <circle cx="188" cy="146" r="1.5" fill="#00f3ff" filter="url(#avGlowBlue)"/>
+                                <circle cx="187" cy="145" r="0.6" fill="#ffffff"/>
+                                <!-- Blink Lid -->
+                                <rect id="avLidR" x="170" y="135" width="35" height="15" fill="url(#avFaceGrad)"
+                                      style="transform: scaleY(0); transform-origin: 188px 135px; transition: transform 0.08s ease-in-out;"/>
+                                <!-- Epic Eyeliner -->
+                                <path d="M 202 145 Q 188 140 173 146" fill="none" stroke="#00f3ff" stroke-width="2" stroke-linecap="round"/>
+                            </g>
+                        </svg>
+
+                        <!-- Floating particles around avatar -->
+                        <div class="av-particle" style="--x:8%;--y:20%;--s:4px;--dur:3.1s"></div>
+                        <div class="av-particle" style="--x:88%;--y:15%;--s:3px;--dur:4.2s"></div>
+                        <div class="av-particle" style="--x:5%;--y:55%;--s:5px;--dur:2.8s"></div>
+                        <div class="av-particle" style="--x:92%;--y:60%;--s:3px;--dur:3.6s"></div>
+                        <div class="av-particle" style="--x:15%;--y:80%;--s:4px;--dur:5s"></div>
+                        <div class="av-particle" style="--x:80%;--y:82%;--s:3px;--dur:3.9s"></div>
+                        <div class="av-particle" style="--x:50%;--y:5%;--s:5px;--dur:4.5s"></div>
+                    </div>
+
+                    <!-- Sound wave visualizer (shows during speech) -->
+                    <div class="av-soundwave" id="avSoundwave">
+                        <div class="av-sw-bar"></div><div class="av-sw-bar"></div><div class="av-sw-bar"></div>
+                        <div class="av-sw-bar"></div><div class="av-sw-bar"></div><div class="av-sw-bar"></div>
+                        <div class="av-sw-bar"></div><div class="av-sw-bar"></div><div class="av-sw-bar"></div>
+                        <div class="av-sw-bar"></div><div class="av-sw-bar"></div>
+                    </div>
+
+                    <!-- Name label below avatar -->
+                    <div class="av-name-label">
+                        <div class="av-name-txt">HARDIK PANT</div>
+                        <div class="av-role-txt">Future-Ready Developer // AI &amp; ML Enthusiast</div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="av-cta-row">
+                        <button class="av-cta primary" id="btnAvTalk">
+                            <i class="fas fa-microphone"></i> Talk to Me
+                        </button>
+                        <a href="#projects" class="av-cta secondary">
+                            <i class="fas fa-rocket"></i> Explore Portfolio
+                        </a>
+                        <button class="av-cta accent" id="btnAvInit">
+                            <i class="fas fa-terminal"></i> Initialize Profile
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ── RIGHT PANEL: AI Terminal Dialogue ── -->
+                <div class="av-right-panel reveal">
+                    <div class="arp-header">
+                        <span class="arp-dot"></span>
+                        AI_TERMINAL v3.7
+                        <button class="arp-mute" id="btnMuteAv" title="Toggle Voice">
+                            <i class="fas fa-volume-up" id="muteIcon"></i>
+                        </button>
+                    </div>
+
+                    <div class="arp-log" id="avLog">
+                        <div class="arp-line sys">[SYS] Neural interface initialized</div>
+                        <div class="arp-line sys">[SYS] Identity module active</div>
+                        <div class="arp-line sys">[SYS] Awaiting interaction...</div>
+                    </div>
+
+                    <div class="arp-dialogue-box">
+                        <span class="arp-prompt">&gt; </span>
+                        <span class="arp-text" id="avDialogueText"></span>
+                        <span class="arp-cursor blink-text">_</span>
+                    </div>
+
+                    <div class="arp-voice-lines">
+                        <div class="arp-vl-label">// QUICK PHRASES</div>
+                        <button class="arp-vl-btn" data-line="Explore my journey, skills, and projects to see what I have built.">
+                            <i class="fas fa-chevron-right"></i> Explore my journey
+                        </button>
+                        <button class="arp-vl-btn" data-line="Let us build the future through technology and innovation.">
+                            <i class="fas fa-chevron-right"></i> Build the future
+                        </button>
+                        <button class="arp-vl-btn" data-line="I am glad you are here. Feel free to connect with me anytime.">
+                            <i class="fas fa-chevron-right"></i> Glad you're here
+                        </button>
+                    </div>
+
+                    <!-- Mini HUD coords bottom -->
+                    <div class="arp-footer">
+                        <span id="avHudCoords2">[30.7333°N, 76.7794°E]</span>
+                        <span class="arp-status-ok">&#x2665; ONLINE</span>
+                    </div>
+                </div>
+
+            </div><!-- /av-layout -->
+        </div><!-- /container -->
+    </section>
+
+
+    <section id="about" class="about dossier-section">
+        <!-- Binary code bg canvas (visible on mousemove) -->
+        <canvas id="binary-canvas" class="binary-canvas"></canvas>
+
+        <div class="container">
+            <!-- Section header -->
+            <div class="dossier-header reveal">
+                <div class="dossier-tag">UNIT_ID: HP-2024 // ACCESS: GRANTED</div>
+                <span class="hud-micro-line pulse" style="top:-30px; left:0;">> DB_SYNC: TRUE // NET: SECURE</span>
+                <h2 class="section-title">Cybernetic Dossier</h2>
+                <div class="dossier-divider"></div>
+            </div>
+
+            <div class="dossier-grid">
+                <!-- LEFT — Holographic ID card -->
+                <div class="holo-id-wrap reveal">
+                    <div class="holo-id-card c-tilt" id="holoCard">
+                        <!-- Holographic Background Elements -->
+                        <div class="holo-radar-ring outer-ring"></div>
+                        <div class="holo-radar-ring inner-ring"></div>
+                        <!-- Animated HUD Corners -->
+                        <div class="id-corner id-tl"></div>
+                        <div class="id-corner id-tr"></div>
+                        <div class="id-corner id-bl"></div>
+                        <div class="id-corner id-br"></div>
+                        
+                        <!-- Scanning line -->
+                        <div class="scan-line" id="scanLine"></div>
+                        <!-- Biometric overlay (shows on hover) -->
+                        <div class="bio-overlay" id="bioOverlay">
+                            <span>STATUS: ONLINE</span>
+                            <span>ROLE: DEVELOPER</span>
+                            <span>THREAT: LOW</span>
+                            <span>CLEARANCE: L4</span>
+                            <span>ENTITY: VERIFIED</span>
+                        </div>
+                        <!-- Data-stream popup (appears on keyword hover) -->
+                        <div class="avatar-datastream" id="avatarDatastream">
+                            <div class="ads-header"><span class="ads-cursor">▶</span> SKILL_PROFILE.exe</div>
+                            <div class="ads-body" id="adsBody"></div>
+                        </div>
+                        <!-- Avatar with breathing + talking mouth -->
+                        <div class="holo-avatar" id="holoAvatar">
+                            <i class="fas fa-user-astronaut"></i>
+                            <div class="avatar-mouth" id="avatarMouth">
+                                <div class="mouth-bar"></div>
+                                <div class="mouth-bar"></div>
+                                <div class="mouth-bar"></div>
+                            </div>
+                        </div>
+                        <!-- ID meta -->
+                        <div class="holo-meta">
+                            <div class="holo-name">HARDIK PANT</div>
+                            <div class="holo-sub">CSE // LPU</div>
+                        </div>
+                        <!-- Corner decoratives inside card -->
+                        <div class="id-corner id-tl"></div>
+                        <div class="id-corner id-tr"></div>
+                        <div class="id-corner id-bl"></div>
+                        <div class="id-corner id-br"></div>
+                    </div>
+                    <!-- Below-card HUD readout -->
+                    <div class="id-hud-readout">
+                        <div class="id-hud-row"><span class="id-hud-key">SYS</span><span class="id-hud-val" id="sysStatus">ONLINE</span></div>
+                        <div class="id-hud-row"><span class="id-hud-key">CPU</span><div class="id-hud-bar"><div class="id-hud-fill" id="cpuFill" style="width:72%"></div></div></div>
+                        <div class="id-hud-row"><span class="id-hud-key">RAM</span><div class="id-hud-bar"><div class="id-hud-fill magenta" id="ramFill" style="width:55%"></div></div></div>
+                        <div class="id-hud-row"><span class="id-hud-key">NET</span><div class="id-hud-bar"><div class="id-hud-fill" id="netFill" style="width:88%"></div></div></div>
+                        <div class="id-hud-coords" id="hudCoords">[30.7333, 76.7794]</div>
+                    </div>
+                </div>
+
+                <!-- RIGHT — Decrypt text + HUD decoratives -->
+                <div class="dossier-text-wrap">
+                    <!-- Gear decoration top-right -->
+                    <div class="dossier-gear-wrap">
+                        <i class="fas fa-cog dossier-gear" id="gear1"></i>
+                        <i class="fas fa-cog dossier-gear gear-sm" id="gear2"></i>
+                    </div>
+
+                    <!-- Holographic Tagline -->
+                    <div class="dossier-tagline reveal">
+                        <span>"FORGING THE FUTURE THROUGH DATA, LOGIC, AND INTELLIGENT SYSTEMS."</span>
+                    </div>
+
+                    <!-- Paragraphs with decrypt trigger -->
+                    <p class="decrypt-text reveal" data-original="I am a Computer Science student at LPU, driven by a deep curiosity for how [Machine Learning] and intelligent systems solve complex real-world problems.">
+                        I am a Computer Science student at LPU, driven by a deep curiosity for how <span class="glitch-keyword" data-skill="Machine Learning">Machine Learning</span> and intelligent systems solve complex real-world problems.
+                    </p>
+
+                    <p class="decrypt-text reveal" data-original="With expertise in [Python], [Data Analysis], and active exploration into [Django], I thrive on ambitious challenges—focused purely on building the premium technology of tomorrow.">
+                        With expertise in <span class="glitch-keyword" data-skill="Python">Python</span>, <span class="glitch-keyword" data-skill="Data Analysis">Data Analysis</span>, and active exploration into <span class="glitch-keyword" data-skill="Django">Django</span>, I thrive on ambitious challenges—focused purely on building the premium technology of tomorrow.
+                    </p>
+
+                    <!-- Cinematic Animated Terminal -->
+                    <div class="dossier-terminal reveal glass c-tilt" id="dossierTerminal">
+                        <div class="dt-header">
+                            <span class="dt-dot"></span>
+                            <span class="dt-dot"></span>
+                            <span class="dt-dot"></span>
+                            <span class="dt-title">sys_boot.exe</span>
+                        </div>
+                        <div class="dt-body" id="dtBody"></div>
+                    </div>
+
+                    <!-- Bottom corner HUD bar -->
+                    <div class="dossier-bottom-hud">
+                        <div class="dbh-left">
+                            <span class="dbh-label">SIGNAL</span>
+                            <div class="dbh-bars">
+                                <div class="dbh-bar" style="height:6px"></div>
+                                <div class="dbh-bar" style="height:10px"></div>
+                                <div class="dbh-bar" style="height:14px"></div>
+                                <div class="dbh-bar" style="height:10px"></div>
+                                <div class="dbh-bar" style="height:6px"></div>
+                            </div>
+                        </div>
+                        <div class="dbh-coords" id="dossierCoords">[30.7333°N, 76.7794°E]</div>
+                        <div class="dbh-right">
+                            <span class="dbh-status heartbeat-text" id="entityVerified">♥ ENTITY VERIFIED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Journey -->
+    <section id="journey" class="journey">
+        <div class="container">
+            <span class="hud-micro-line" style="position:relative; display:block; text-align:center; top:-10px;">> TIMELINE_ARCHIVE.EXE LOADED</span>
+            <h2 class="section-title reveal">My Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item left reveal">
+                    <div class="glass timeline-content">
+                        <span class="timeline-year">Schooling</span>
+                        <h3>Matriculation</h3>
+                        <p>Completed with a strong foundation and 88% score.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right reveal">
+                    <div class="glass timeline-content">
+                        <span class="timeline-year">Senior Secondary</span>
+                        <h3>Intermediate (PCM)</h3>
+                        <p>Specialized in Physics, Chemistry, and Mathematics with 78%.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left reveal">
+                    <div class="glass timeline-content">
+                        <span class="timeline-year">Present</span>
+                        <h3>B.Tech in CSE</h3>
+                        <p>Pursuing degree at Lovely Professional University with a CGPA of 8.14. Transitioned from academics into active development and AI/ML project building.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills" style="position: relative; overflow: hidden;">
+        <div class="skills-particles"></div>
+        <div class="container">
+            <span class="hud-micro-line pulse" style="position:relative; display:block; text-align:center; top:-10px;">> NEURAL_LINK: STABLE // MODULE 03</span>
+            <h2 class="section-title reveal">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <!-- Languages -->
+                <div class="glass skill-card c-tilt reveal" data-category="lang">
+                    <div class="sc-header">
+                        <i class="fas fa-terminal"></i>
+                        <h3>System Languages</h3>
+                        <span class="sc-badge">[SYS_LANG]</span>
+                    </div>
+                    <div class="sc-scanline"></div>
+                    <div class="id-corner id-tl"></div>
+                    <div class="id-corner id-br"></div>
+                    
+                    <div class="skill-list">
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">Python</span><span class="sn-level">95%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar sn-glow" style="width: 95%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">C++</span><span class="sn-level">90%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">Java</span><span class="sn-level">85%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">C</span><span class="sn-level">80%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 80%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">SQL</span><span class="sn-level">85%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">HTML/CSS</span><span class="sn-level">90%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 90%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Libraries & Frameworks -->
+                <div class="glass skill-card c-tilt reveal" data-category="mods">
+                    <div class="sc-header">
+                        <i class="fas fa-cubes"></i>
+                        <h3>Frameworks & Libs</h3>
+                        <span class="sc-badge">[MOD_CORE]</span>
+                    </div>
+                    <div class="sc-scanline"></div>
+                    <div class="id-corner id-tl"></div>
+                    <div class="id-corner id-br"></div>
+                    
+                    <div class="skill-list">
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">Django</span><span class="sn-level">88%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar sn-glow" style="width: 88%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">Pandas</span><span class="sn-level">92%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 92%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">NumPy</span><span class="sn-level">90%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">Scikit-learn</span><span class="sn-level">85%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">TensorFlow</span><span class="sn-level">80%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 80%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Strengths -->
+                <div class="glass skill-card c-tilt reveal" data-category="intel">
+                    <div class="sc-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>Intelligence Cores</h3>
+                        <span class="sc-badge">[INT_CORE]</span>
+                    </div>
+                    <div class="sc-scanline"></div>
+                    <div class="id-corner id-tl"></div>
+                    <div class="id-corner id-br"></div>
+                    
+                    <div class="skill-list">
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">Machine Learning</span><span class="sn-level">95%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar sn-glow" style="width: 95%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">Generative AI</span><span class="sn-level">90%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar sn-glow" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">DSA</span><span class="sn-level">88%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 88%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">Data Analysis</span><span class="sn-level">92%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 92%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">Problem Solving</span><span class="sn-level">95%</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 95%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="glass skill-card c-tilt reveal" data-category="tools">
+                    <div class="sc-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>System Toolkit</h3>
+                        <span class="sc-badge">[SYS_TOOL]</span>
+                    </div>
+                    <div class="sc-scanline"></div>
+                    <div class="id-corner id-tl"></div>
+                    <div class="id-corner id-br"></div>
+                    
+                    <div class="skill-list">
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">VS Code</span><span class="sn-level">Active</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 100%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">GitHub</span><span class="sn-level">Active</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 100%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">PyCharm</span><span class="sn-level">Active</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 100%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">Team Player</span><span class="sn-level">Core</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 100%;"></div></div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="sn-top"><span class="sn-name">Adaptability</span><span class="sn-level">Core</span></div>
+                            <div class="sn-bar-wrap"><div class="sn-bar" style="width: 100%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <span class="hud-micro-line" style="position:relative; display:block; text-align:center; top:-10px;">> ACCESSING: OUTPOST_SERVERS // PROJECT CACHE</span>
+            <h2 class="section-title reveal">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <!-- Project 1 -->
+                <div class="glass project-card c-tilt reveal project-gateway" data-gateway="bio">
+                    <div class="pg-top-module">
+                        <div class="pg-scanner">
+                            <i class="fas fa-leaf pg-icon"></i>
+                            <div class="pg-radar"></div>
+                            <div class="pg-scanline"></div>
+                        </div>
+                        <div class="pg-labels">
+                            <span class="pg-label">PRJ-01</span>
+                            <span class="pg-label pulse-label">LIVE</span>
+                            <span class="pg-label">AI MODULE</span>
+                        </div>
+                        <div class="pg-hover-overlay">
+                            <div class="pg-status-wrap">
+                                <span class="pg-status-text" data-type="INITIALIZING BIO-SCANNER..."></span>
+                            </div>
+                            <button class="neon-btn neon-btn-primary pg-enter-btn">ENTER PORTAL</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Plant Disease Detection</h3>
+                        <p>A ML/DL project identifying plant diseases from leaf images using real datasets to support early diagnosis.</p>
+                        <div class="project-tech pg-tech">
+                            <span class="tech-capsule"><i class="fas fa-microchip"></i> Python</span>
+                            <span class="tech-capsule"><i class="fas fa-network-wired"></i> TensorFlow</span>
+                            <span class="tech-capsule"><i class="fas fa-database"></i> Kaggle</span>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link pg-ext-btn"><i class="fab fa-github"></i> OUTPOST</button>
+                            <button class="project-link pg-ext-btn"><i class="fas fa-external-link-alt"></i> UPLINK</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass project-card c-tilt reveal project-gateway" data-gateway="doc">
+                    <div class="pg-top-module">
+                        <div class="pg-scanner">
+                            <i class="fas fa-file-invoice pg-icon"></i>
+                            <div class="pg-radar"></div>
+                            <div class="pg-scanline"></div>
+                        </div>
+                        <div class="pg-labels">
+                            <span class="pg-label">PRJ-02</span>
+                            <span class="pg-label pulse-label">ARCHIVED</span>
+                            <span class="pg-label">WEB SYSTEM</span>
+                        </div>
+                        <div class="pg-hover-overlay">
+                            <div class="pg-status-wrap">
+                                <span class="pg-status-text" data-type="ACCESSING ARCHIVE NODE..."></span>
+                            </div>
+                            <button class="neon-btn neon-btn-primary pg-enter-btn">ENTER PORTAL</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Report Card Generator</h3>
+                        <p>Responsive web app for creating, previewing, and exporting student report cards with PDF support.</p>
+                        <div class="project-tech pg-tech">
+                            <span class="tech-capsule"><i class="fab fa-html5"></i> HTML</span>
+                            <span class="tech-capsule"><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span class="tech-capsule"><i class="fab fa-js"></i> JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link pg-ext-btn"><i class="fab fa-github"></i> OUTPOST</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass project-card c-tilt reveal project-gateway" data-gateway="holo">
+                    <div class="pg-top-module">
+                        <div class="pg-scanner">
+                            <i class="fas fa-code pg-icon"></i>
+                            <div class="pg-radar"></div>
+                            <div class="pg-scanline"></div>
+                        </div>
+                        <div class="pg-labels">
+                            <span class="pg-label">PRJ-03</span>
+                            <span class="pg-label pulse-label">ACTIVE NODE</span>
+                            <span class="pg-label">IDENTITY SYSTEM</span>
+                        </div>
+                        <div class="pg-hover-overlay">
+                            <div class="pg-status-wrap">
+                                <span class="pg-status-text" data-type="ESTABLISHING SECURE UPLINK..."></span>
+                            </div>
+                            <button class="neon-btn neon-btn-primary pg-enter-btn">ENTER PORTAL</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Personal Portfolio</h3>
+                        <p>Modern futuristic portfolio website showcasing projects, skills, and journey with immersive interactive digital spaces.</p>
+                        <div class="project-tech pg-tech">
+                            <span class="tech-capsule"><i class="fab fa-html5"></i> HTML</span>
+                            <span class="tech-capsule"><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span class="tech-capsule"><i class="fab fa-js"></i> JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <button class="project-link pg-ext-btn"><i class="fab fa-github"></i> OUTPOST</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title reveal">Certifications</h2>
+            <div class="skills-grid">
+                <div class="glass skill-card c-tilt reveal">
+                    <i class="fas fa-certificate" style="color: var(--neon-purple); font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3>Advance Python for AI & ML</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">CSE Pathshala - Strengthened skills in data handling and model building.</p>
+                </div>
+                <div class="glass skill-card c-tilt reveal">
+                    <i class="fas fa-certificate" style="color: var(--neon-purple); font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3>Python for Data Science</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Cognitive Classes - Mastery of NumPy and Pandas.</p>
+                </div>
+                <div class="glass skill-card c-tilt reveal">
+                    <i class="fas fa-brain" style="color: var(--neon-purple); font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3>Master Generative AI</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Certification in ChatGPT and GenAI tools.</p>
+                </div>
+                <div class="glass skill-card c-tilt reveal">
+                    <i class="fas fa-code-branch" style="color: var(--neon-purple); font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3>ByteBash Coding</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Hackathon Participant & Problem Solver.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Activities -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title reveal">Experience & Activities</h2>
+            <div class="exp-grid">
+                <div class="glass exp-card c-tilt reveal">
+                    <span class="exp-org">Tare Zameen Foundation</span>
+                    <h3>Community Development Volunteer</h3>
+                    <p style="color: var(--text-muted);">Actively involved in social initiatives, enhancing teamwork and communication skills while giving back to society.</p>
+                </div>
+                <div class="glass exp-card c-tilt reveal">
+                    <span class="exp-org">One India Event (LPU)</span>
+                    <h3>Singer & Performer</h3>
+                    <p style="color: var(--text-muted);">Showcased versatility and stage presence by participating as a singer in LPU's flagship cultural event.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <span class="hud-micro-line pulse" style="position:relative; display:block; text-align:center; top:-10px;">> COMM_CHANNELS: OPEN // ENCRYPTION: 256-BIT</span>
+            <h2 class="section-title reveal">Let's Connect</h2>
+            <div class="contact-grid">
+                <div class="contact-info c-tilt reveal">
+                    <h3>Get in Touch</h3>
+                    <p>I&rsquo;m always open to exciting opportunities, collaborations, and meaningful conversations in tech. Reach out and let's build the future together.</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="method-details">
+                                <h4>Email</h4>
+                                <span>hardikpant32@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                            <div class="method-details">
+                                <h4>LinkedIn</h4>
+                                <span>linkedin.com/in/hardik-pant</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon"><i class="fab fa-github"></i></div>
+                            <div class="method-details">
+                                <h4>GitHub</h4>
+                                <span>github.com/hardikpant</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass contact-form c-tilt reveal">
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="neon-btn neon-btn-primary" style="width: 100%;">Send Signal <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo futuristically-font">Hardik Pant</div>
+            <p class="footer-text">Built with passion, creativity, and vision for the future.</p>
+            <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 1rem;">&copy; 2024 Hardik Pant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════════
+         ROBOTIC DOG CURSOR COMPANION
+    ═══════════════════════════════════════════════════════ -->
+    <div id="roboDog" class="robo-dog">
+        <!-- Floating base ring for the dog -->
+        <div class="dog-shadow"></div>
+        
+        <svg class="dog-svg" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="dogGlowCyan" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="3" result="blur"/>
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="dogGlowMagenta" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="2.5" result="blur"/>
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+            </defs>
+
+            <!-- Tail -->
+            <path id="dogTail" d="M 15 45 Q 5 25 12 18" fill="none" stroke="#bc13fe" stroke-width="2.5" stroke-linecap="round" filter="url(#dogGlowMagenta)"/>
+
+            <!-- Back Leg -->
+            <path d="M 28 55 L 22 70 L 28 72" fill="none" stroke="#00f3ff" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="28" cy="55" r="2" fill="#bc13fe"/>
+
+            <!-- Front Leg -->
+            <path d="M 68 55 L 62 70 L 68 72" fill="none" stroke="#00f3ff" stroke-width="2.5" stroke-linejoin="round"/>
+            <circle cx="68" cy="55" r="2" fill="#bc13fe"/>
+
+            <!-- Main Body (Cyber structure) -->
+            <path d="M 20 50 Q 15 35 35 35 L 65 35 Q 75 40 70 55 Q 50 60 20 50 Z" fill="rgba(0,10,25,0.9)" stroke="#00f3ff" stroke-width="1.5" filter="url(#dogGlowCyan)"/>
+            <line x1="30" y1="45" x2="60" y2="45" stroke="rgba(0,243,255,0.3)" stroke-width="1.5"/>
+            <circle cx="45" cy="45" r="4" fill="#bc13fe" filter="url(#dogGlowMagenta)"/>
+
+            <!-- Head & Neck -->
+            <path d="M 65 40 L 75 25 Q 90 20 92 35 L 82 45 Z" fill="rgba(0,10,25,0.9)" stroke="#00f3ff" stroke-width="1.5"/>
+            
+            <!-- Ear (Twitching animation applied via CSS) -->
+            <path id="dogEar" d="M 75 25 L 70 10 L 82 18 Z" fill="none" stroke="#00f3ff" stroke-width="1.5" style="transform-origin: 75px 25px;"/>
+
+            <!-- Cyber Visor / Eye -->
+            <rect x="80" y="28" width="8" height="3" rx="1.5" fill="#00f3ff" filter="url(#dogGlowCyan)"/>
+            
+            <!-- Alert Scan Beam (Hidden by default, shown on hover via JS/CSS class) -->
+            <path id="dogScanBeam" d="M 85 29 L 100 22 L 100 36 Z" fill="rgba(0,243,255,0.15)" style="opacity:0; transition: opacity 0.3s;" filter="url(#dogGlowCyan)"/>
+        </svg>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #00FFFF;
+  --bg-color: #000000;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: sans-serif;
+  transition: --primary-color 0.1s ease-in-out;
+}
