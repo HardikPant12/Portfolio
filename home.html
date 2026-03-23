@@ -9,20 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    
-    <!-- Pre-Entry Loading Screen -->
-    <div id="entry-screen">
-      <div id="login-canvas-container"></div>
-      <div class="entry-content">
-        <h1 class="system-text">INITIALIZING SYSTEM...</h1>
-        <button id="enter-btn">ENTER</button>
-        <p id="loading-text">LOADING...</p>
-      </div>
-    </div>
-
-
-    <div id="portal-overlay"></div>
     <!-- Next-Gen Cinematic Cyberpunk Background Layers -->
     <div id="cyber-bg" class="cyber-bg-container">
         <!-- Base canvas for dynamic node connections -->
@@ -40,22 +26,19 @@
     <nav id="navbar">
         <div class="container nav-content">
             <a href="#" class="logo">HP.</a>
-            <ul class="nav-links" style="cursor:pointer; list-style: none;">
-                <li onclick="openSection('home-view')"><a>Home</a></li>
-                <li onclick="openSection('about')"><a>About</a></li>
-                <li onclick="openSection('journey')"><a>Journey</a></li>
-                <li onclick="openSection('skills')"><a>Skills</a></li>
-                <li onclick="openSection('projects')"><a>Projects</a></li>
-                <li onclick="openSection('certificates')"><a>Certs</a></li>
-                <li onclick="openSection('experience')"><a>Experience</a></li>
-                <li onclick="openSection('contact')"><a>Connect</a></li>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Connect</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <div id="home-view" class="section">
-<section id="hero" class="hero">
+    <section id="hero" class="hero">
         <!-- Starfield canvas (hero-local) -->
         <canvas id="hero-starfield"></canvas>
         <!-- CRT Scanlines overlay -->
@@ -528,10 +511,7 @@
     </section>
 
     <!-- My Journey -->
-    </div>
-
-    <section id="journey" class="journey section">
-    <button onclick="openSection('home-view')" class="back-btn">← Back to Home</button>
+    <section id="journey" class="journey">
         <div class="container">
             <span class="hud-micro-line" style="position:relative; display:block; text-align:center; top:-10px;">> TIMELINE_ARCHIVE.EXE LOADED</span>
             <h2 class="section-title reveal">My Journey</h2>
@@ -562,8 +542,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section" style="position: relative; overflow: hidden;">
-    <button onclick="openSection('home-view')" class="back-btn">← Back to Home</button>
+    <section id="skills" class="skills" style="position: relative; overflow: hidden;">
         <div class="skills-particles"></div>
         <div class="container">
             <span class="hud-micro-line pulse" style="position:relative; display:block; text-align:center; top:-10px;">> NEURAL_LINK: STABLE // MODULE 03</span>
@@ -717,14 +696,14 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="projects section">
-    <button onclick="openSection('home-view')" class="back-btn">← Back to Home</button>
+    <section id="projects" class="projects">
         <div class="container">
             <span class="hud-micro-line" style="position:relative; display:block; text-align:center; top:-10px;">> ACCESSING: OUTPOST_SERVERS // PROJECT CACHE</span>
             <h2 class="section-title reveal">Featured Projects</h2>
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="glass project-card c-tilt reveal project-gateway" data-gateway="bio" data-link="https://github.com/Rahul99699/A-Unified-Multi-Source-Plant-Health-Vision-System-for-Cross-Crop-Disease-Detection-and-Early-Diagnos">
+                <!-- Project 1 -->
+                <div class="glass project-card c-tilt reveal project-gateway" data-gateway="bio">
                     <div class="pg-top-module">
                         <div class="pg-scanner">
                             <i class="fas fa-leaf pg-icon"></i>
@@ -751,15 +730,15 @@
                             <span class="tech-capsule"><i class="fas fa-network-wired"></i> TensorFlow</span>
                             <span class="tech-capsule"><i class="fas fa-database"></i> Kaggle</span>
                         </div>
-                        <div class="project-links" onclick="event.stopPropagation()">
-                            <a href="https://github.com/Rahul99699/A-Unified-Multi-Source-Plant-Health-Vision-System-for-Cross-Crop-Disease-Detection-and-Early-Diagnos" target="_blank" class="project-link pg-ext-btn"><i class="fab fa-github"></i> OUTPOST</a>
-                            <a href="#" class="project-link pg-ext-btn disabled"><i class="fas fa-external-link-alt"></i> UPLINK</a>
+                        <div class="project-links">
+                            <button class="project-link pg-ext-btn"><i class="fab fa-github"></i> OUTPOST</button>
+                            <button class="project-link pg-ext-btn"><i class="fas fa-external-link-alt"></i> UPLINK</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
-                <div class="glass project-card c-tilt reveal project-gateway" data-gateway="doc" data-link="https://report-card-generator-2k4o.vercel.app">
+                <div class="glass project-card c-tilt reveal project-gateway" data-gateway="doc">
                     <div class="pg-top-module">
                         <div class="pg-scanner">
                             <i class="fas fa-file-invoice pg-icon"></i>
@@ -786,25 +765,24 @@
                             <span class="tech-capsule"><i class="fab fa-css3-alt"></i> CSS</span>
                             <span class="tech-capsule"><i class="fab fa-js"></i> JavaScript</span>
                         </div>
-                        <div class="project-links" onclick="event.stopPropagation()">
-                            <a href="#" class="project-link pg-ext-btn disabled"><i class="fab fa-github"></i> OUTPOST</a>
-                            <a href="https://report-card-generator-2k4o.vercel.app" target="_blank" class="project-link pg-ext-btn"><i class="fas fa-external-link-alt"></i> UPLINK</a>
+                        <div class="project-links">
+                            <button class="project-link pg-ext-btn"><i class="fab fa-github"></i> OUTPOST</button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="glass project-card c-tilt reveal project-gateway" data-gateway="holo" data-link="https://github.com/HardikPant12/smart-campus-helpdesk">
+                <div class="glass project-card c-tilt reveal project-gateway" data-gateway="holo">
                     <div class="pg-top-module">
                         <div class="pg-scanner">
-                            <i class="fas fa-server pg-icon"></i>
+                            <i class="fas fa-code pg-icon"></i>
                             <div class="pg-radar"></div>
                             <div class="pg-scanline"></div>
                         </div>
                         <div class="pg-labels">
                             <span class="pg-label">PRJ-03</span>
                             <span class="pg-label pulse-label">ACTIVE NODE</span>
-                            <span class="pg-label">WEB SYSTEM</span>
+                            <span class="pg-label">IDENTITY SYSTEM</span>
                         </div>
                         <div class="pg-hover-overlay">
                             <div class="pg-status-wrap">
@@ -814,16 +792,15 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Smart Campus Helpdesk</h3>
-                        <p>A centralized system for managing campus issues, complaints, and service requests with real-time tracking.</p>
+                        <h3>Personal Portfolio</h3>
+                        <p>Modern futuristic portfolio website showcasing projects, skills, and journey with immersive interactive digital spaces.</p>
                         <div class="project-tech pg-tech">
-                            <span class="tech-capsule"><i class="fab fa-python"></i> Django</span>
-                            <span class="tech-capsule"><i class="fab fa-python"></i> Python</span>
-                            <span class="tech-capsule"><i class="fas fa-globe"></i> Web System</span>
+                            <span class="tech-capsule"><i class="fab fa-html5"></i> HTML</span>
+                            <span class="tech-capsule"><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span class="tech-capsule"><i class="fab fa-js"></i> JavaScript</span>
                         </div>
-                        <div class="project-links" onclick="event.stopPropagation()">
-                            <a href="https://github.com/HardikPant12/smart-campus-helpdesk" target="_blank" class="project-link pg-ext-btn"><i class="fab fa-github"></i> OUTPOST</a>
-                            <a href="#" class="project-link pg-ext-btn disabled"><i class="fas fa-external-link-alt"></i> UPLINK</a>
+                        <div class="project-links">
+                            <button class="project-link pg-ext-btn"><i class="fab fa-github"></i> OUTPOST</button>
                         </div>
                     </div>
                 </div>
@@ -832,8 +809,7 @@
     </section>
 
     <!-- Certificates -->
-    <section id="certificates" class="certificates section">
-    <button onclick="openSection('home-view')" class="back-btn">← Back to Home</button>
+    <section id="certificates" class="certificates">
         <div class="container">
             <h2 class="section-title reveal">Certifications</h2>
             <div class="skills-grid">
@@ -862,8 +838,7 @@
     </section>
 
     <!-- Experience & Activities -->
-    <section id="experience" class="experience section">
-    <button onclick="openSection('home-view')" class="back-btn">← Back to Home</button>
+    <section id="experience" class="experience">
         <div class="container">
             <h2 class="section-title reveal">Experience & Activities</h2>
             <div class="exp-grid">
@@ -882,8 +857,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
-    <button onclick="openSection('home-view')" class="back-btn">← Back to Home</button>
+    <section id="contact" class="contact">
         <div class="container">
             <span class="hud-micro-line pulse" style="position:relative; display:block; text-align:center; top:-10px;">> COMM_CHANNELS: OPEN // ENCRYPTION: 256-BIT</span>
             <h2 class="section-title reveal">Let's Connect</h2>
@@ -994,11 +968,6 @@
         </svg>
     </div>
 
-    
-    <!-- WebGL & GSAP Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
